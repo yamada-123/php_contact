@@ -30,12 +30,12 @@ function validation($data){
   }
 
   //メールアドレス
-  if(empty($data['email1']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL) ){
+  if(empty($data['email1']) || !filter_var($data['email1'], FILTER_VALIDATE_EMAIL) ){
     $error[] = '「メールアドレス」は正しい形式で入力してください。';
   }
 
   //メールドレス(確認用)
-  if(empty($data['email2']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
+  if(empty($data['email2']) || !filter_var($data['email2'], FILTER_VALIDATE_EMAIL)){
     $error[] = '「メールアドレス(確認用)」は正しい形式で入力してください。';
   }
 
@@ -50,10 +50,6 @@ function validation($data){
     $error[] = '「性別」は必ず入力してください。';
   }
 
-  //年齢
-  if(empty($data['age']) || 6 < $data['age']){
-    $error[] = '「年齢」は必ず入力してください。';
-  }
 
   //お問い合わせ内容
   if (empty($data['contact']) || 200 < mb_strlen($data['contact'])){
